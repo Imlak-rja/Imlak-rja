@@ -1,108 +1,145 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-void printsudoku(int arr[9][9])
-{
- cout << "---------------------------------" << endl;
- for (int r = 0; r < 9; r++)
- {
- for(int c = 0; c < 9; c++)
- cout << arr[r][c] << " "; 
- cout << endl; 
- }
- cout << "---------------------------------" << endl;
-}
-bool canPlace(int arr[9][9], int row, int col, int n)
-{
- if (arr[row][col] != 0) return false;
- bool status = true;
- int gridx = (col / 3) * 3;
- int gridy = (row / 3) * 3;
- for(int i = 0; i < 9; i++)
- {
- if (arr[row][i] == n) { status = false; break; }
- if (arr[i][col] == n) { status = false; break; }
- if (arr[gridy + i / 3][gridx + i % 3] == n) 
- { 
- status = false; break;
- }
- }
- return status;
-}
-vector<int> findPlacebles(int arr[9][9], int r, int c)
-{
- vector<int> cps = {};
- for(int i = 1; i <= 9; i++)
- {
- if(canPlace(arr, r, c, i))
- cps.push_back(i);
-}
- return cps;
-}
-void copyArray(int arr[9][9], int arrCpy[9][9])
-{
- for(int y = 0; y < 9; y++)
- for(int x = 0; x < 9; x++)
- arrCpy[y][x] = arr[y][x];
-}
-void nextEmpty(int arr[9][9], int row, int col, int &nRow, int &nCol)
-{
- int index = 9 * 9;
- for(int i = row * 9 + col + 1; i < 9 * 9; i++)
- {
- if (arr[i / 9][i % 9]== 0)
- {
- index =i;
- break;
- }
- }
- nRow = index / 9;
- nCol = index % 9;
-}
-bool solveSudoku(int arr[9][9], int row, int col)
-{
- if (row > 8) return true;
- if(arr[row][col] !=0)
- {
- int nextCol, nextRow;
- nextEmpty(arr, row, col, nextRow, nextCol);
- return solveSudoku(arr, nextRow, nextCol); 
- }
- vector<int> placeables = findPlacebles(arr, row, col);
- if (placeables.size() == 0) return false;
- bool status = false;
- for(int i =0; i < placeables.size(); i++)
- {
- int n = placeables[i];
- int arrCpy[9][9];
- copyArray(arr, arrCpy);
- arrCpy[row][col] = n;
- int nextCol, nextRow;
-nextEmpty(arrCpy, row, col, nextRow, nextCol); 
- if (solveSudoku(arrCpy, nextRow, nextCol))
- {
- copyArray(arrCpy, arr);
- status = true;
- break;
- }
- }
- return status;
-}
+
+char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
+
+int checkwin();
+void board();
+
 int main()
 {
- int board[9][9] = {
- {0,4,0,0,1,0,9,0,8},
- {8,0,5,0,0,0,7,0,0},
- {0,0,0,0,0,0,0,1,0},
- {0,2,0,0,0,5,0,0,4},
- {0,0,1,6,0,0,0,0,0},
- {0,3,0,0,0,8,0,0,2},
- {0,0,0,0,0,0,0,6,0},
- {3,0,4,0,0,0,8,0,0},
- {0,8,0,0,9,0,4,0,3} 
- };
- printsudoku(board);
- solveSudoku(board, 0, 0);
- printsudoku(board);
- return 0;
+    int player = 1,i,choice;
+
+    char mark;
+    do
+    {
+        board();
+        player=(player%2)?1:2;
+
+        cout << "Player " << player << ", enter a number:  ";
+        cin >> choice;
+
+        mark=(player == 1) ? 'X' : 'O';
+
+        if (choice == 1 && square[1] == '1')
+
+            square[1] = mark;
+        else if (choice == 2 && square[2] == '2')
+
+            square[2] = mark;
+        else if (choice == 3 && square[3] == '3')
+
+            square[3] = mark;
+        else if (choice == 4 && square[4] == '4')
+
+            square[4] = mark;
+        else if (choice == 5 && square[5] == '5')
+
+            square[5] = mark;
+        else if (choice == 6 && square[6] == '6')
+
+            square[6] = mark;
+        else if (choice == 7 && square[7] == '7')
+
+            square[7] = mark;
+        else if (choice == 8 && square[8] == '8')
+            square[8] = mark;
+        else if (choice == 9 && square[9] == '9')
+
+            square[9] = mark;
+        else
+        {
+            cout<<"Invalid move ";
+
+            player--;
+            cin.ignore();
+            cin.get();
+        }
+        i=checkwin();
+
+        player++;
+    }while(i==-1);
+    board();
+    if(i==1)
+
+        cout<<"==>\aPlayer "<<--player<<" win ";
+    else
+        cout<<"==>\aGame draw";
+
+    cin.ignore();
+    cin.get();
+    return 0;
 }
+
+/*********************************************
+    FUNCTION TO RETURN GAME STATUS
+    1 FOR GAME IS OVER WITH RESULT
+    -1 FOR GAME IS IN PROGRESS
+    O GAME IS OVER AND NO RESULT
+**********************************************/
+
+int checkwin()
+{
+    if (square[1] == square[2] && square[2] == square[3])
+
+        return 1;
+    else if (square[4] == square[5] && square[5] == square[6])
+
+        return 1;
+    else if (square[7] == square[8] && square[8] == square[9])
+
+        return 1;
+    else if (square[1] == square[4] && square[4] == square[7])
+        return 1;
+    else if (square[2] == square[5] && square[5] == square[8])
+
+        return 1;
+    else if (square[3] == square[6] && square[6] == square[9])
+
+        return 1;
+    else if (square[1] == square[5] && square[5] == square[9])
+
+        return 1;
+    else if (square[3] == square[5] && square[5] == square[7])
+
+        return 1;
+    else if (square[1] != '1' && square[2] != '2' && square[3] != '3' 
+                    && square[4] != '4' && square[5] != '5' && square[6] != '6' 
+                  && square[7] != '7' && square[8] != '8' && square[9] != '9')
+
+        return 0;
+    else
+        return -1;
+}
+
+/*******************************************************************
+     FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
+********************************************************************/
+
+void board()
+{
+    //system("cls");
+    cout << "\n\n\tTic Tac Toe\n\n";
+
+    cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
+    cout << endl;
+
+    cout << "     |     |     " << endl;
+    cout << "  " << square[1] << "  |  " << square[2] << "  |  " << square[3] << endl;
+
+    cout << "||_" << endl;
+    cout << "     |     |     " << endl;
+
+    cout << "  " << square[4] << "  |  " << square[5] << "  |  " << square[6] << endl;
+
+    cout << "||_" << endl;
+    cout << "     |     |     " << endl;
+
+    cout << "  " << square[7] << "  |  " << square[8] << "  |  " << square[9] << endl;
+
+    cout << "     |     |     " << endl << endl;
+}
+
+/*******************************************************************
+                END OF PROJECT
+********************************************************************/
