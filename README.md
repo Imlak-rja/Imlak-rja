@@ -13,7 +13,7 @@
 - 🚀 I love creating seamless user experiences and solving complex problems through code.
 - 📫 How to reach me: **mdimlak682@gmail.com**
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">📡 Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/md-imlak" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="md-imlak" height="30" width="40" /></a>
 <a href="https://instagram.com/md.imlak.127" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="md.imlak.127" height="30" width="40" /></a>
@@ -21,7 +21,7 @@
 </p>
 
 
-<h3 align="center"> 📊 My GitHub Stats</h3>
+<h3 align="left"> 📊 My GitHub Stats</h3>
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=Imlak-rja&show_icons=true&locale=en&layout=compact" alt="Imlak-rja" /></p>
 
@@ -29,7 +29,7 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Imlak-rja&" alt="Imlak-rja" /></p>
 
-
+<h3 align="left"> 🏆 GitHub Contribution Graph</h3>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Imlak-rja/Imlak-rja/blob/output/github-contribution-grid-snake.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Imlak-rja/Imlak-rja/blob/output/github-contribution-grid-snake-dark.svg">
