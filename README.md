@@ -7,11 +7,11 @@
 
 ## 🚀 About Me
 - 👨‍💻 All of my projects are available at [My GitHub](https://github.com/Imlak-rja)
-- 🔭 I’m currently working on *Data Structures & Algorithms.*
-- 🌱 I’m learning *Web Development & Machine Learning.*
+- 🔭 I’m currently working on **Data Structures & Algorithms.**
+- 🌱 I’m learning **Web Development & Machine Learning.**
 - 💬 Ask me about anything, I am happy to help.
 - 🚀 I love creating seamless user experiences and solving complex problems through code.
-- 📫 How to reach me: *mdimlak682@gmail.com*
+- 📫 How to reach me: **mdimlak682@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
