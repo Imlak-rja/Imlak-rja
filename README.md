@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Md Imlak</h1>
 <h3 align="center">A passionate Web Engineer from India</h3>
 
-<h4 align="center"><a href="https://hilarious-tulumba-d8dd0d.netlify.app/">MdImlak.github.io</a></h4>
+<h4 align="center"><a href="https://imlak-rja.github.io/">MdImlak.github.io</a></h4>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=Imlak-rja&label=Profile%20views&color=0e75b6&style=flat" alt="Imlak-rja" /> </p>
 
