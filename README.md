@@ -31,7 +31,7 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Imlak-rja&" alt="Imlak-rja" /></p>
 
-<h3 align="left"> 🏆 GitHub Contribution Graph</h3>
+<h3 align="left"> 💫 Contribution Snake Magic</h3>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Imlak-rja/Imlak-rja/blob/output/github-contribution-grid-snake.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/Imlak-rja/Imlak-rja/blob/output/github-contribution-grid-snake-dark.svg">
